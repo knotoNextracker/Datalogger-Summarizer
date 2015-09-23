@@ -13,6 +13,11 @@ import matplotlib.dates as md
 import datetime as dt
 from myAnimate import myAnimate
 import logging
+import ConfigParser
+
+config = ConfigParser.ConfigParser()
+config.read('config.ini')
+module_name = 'Grapherizer'
 
 #Get list of .dat files in directory
 def get_inputs():
@@ -23,13 +28,13 @@ def get_inputs():
 
 
 def write_inputs():
-	output_format = 'Disp'
-	animateYN = 'N'
-	overwriteYN = 'N'
+	output_format = config.get(module_name,'output_format')
+	animateYN = config.get(module_name,'animateYN')
+	overwriteYN = config.get(module_name,'overwriteYN')
 	return [output_format,animateYN,overwriteYN]
 
 def main(datalogger_files,args=write_inputs()):
-	logger = logging.getLogger("Summarizer_Loop")
+	logger = logging.getLogger(config.get('Logger','logger_name'))
 	output_format = args[0]
 	animateYN = args[1]
 	overwriteYN = args[2]
@@ -39,8 +44,8 @@ def main(datalogger_files,args=write_inputs()):
 	images_made = 0
 	animations_made = 0
 
-	datapath = "\\\\10.10.1.150\das\Garnet"
-	exportpath = "C:\Users\knotohamiprodjo\Desktop\py_dev"
+	datapath = config.get('Paths','datastorage_path')
+	exportpath = config.get(module_name,'output_path')
 	# logger.info("Populating file lists...")
 	# dirs = [d for d in os.listdir(exportpath) if os.path.isdir(os.path.join(exportpath,d))]
 	# onlyfiles = [ f for f in listdir(datapath) if isfile(join(datapath,f)) ]

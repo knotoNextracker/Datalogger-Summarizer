@@ -3,12 +3,17 @@
 # the files missing from the spreadsheet.
 import pandas
 import logging
+import ConfigParser
+
+config = ConfigParser.ConfigParser()
+config.read('config.ini')
+module_name = 'Check_Archives'
 
 def main(check_filenames,return_list = False):
 	# Try reading archive sheet, else return False
-	logger = logging.getLogger("Summarizer_Loop")
+	logger = logging.getLogger(config.get('Logger','logger_name'))
 	logger.info("----- Start Check_Archives ----")
-	mypath = 'C:\Users\knotohamiprodjo\Desktop\py_dev\Datalogger_Archive.xlsx'
+	mypath = config.get('Paths','archive_path')
 	result = True
 	try:
 		excel = pandas.read_excel(mypath,sheetname = 'Sheet1')

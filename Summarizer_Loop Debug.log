@@ -1,10 +1,211 @@
-2015-09-23 14:26:50,812 [Summarizer_loop]: ---------- Begin Summarizer_Loop execution ----------
-2015-09-23 14:26:50,812 [Summarizer_loop]: ----- Excecuting Summarizer -----
-2015-09-23 14:26:50,812 [Summarizer]: ----- Start Summarizer.py -----
-2015-09-23 14:26:50,812 [Summarizer]: Populating file list in \\10.10.1.150\das\Garnet...
-2015-09-23 14:26:52,243 [Summarizer]: Checking if archive is up to date...
-2015-09-23 14:26:52,243 [Check_Archives]: ----- Start Check_Archives ----
-2015-09-23 14:26:52,364 [Check_Archives]: No files to update!
-2015-09-23 14:26:52,374 [Summarizer]: Summary up to date, no updates required.
-2015-09-23 14:26:52,374 [Summarizer_loop]: Waiting for 30 minutes before next execution.
-2015-09-23 14:26:52,374 [Summarizer_loop]: Start wait...
+2015-09-23 15:50:32,601 [Summarizer_loop]: ---------- Begin Summarizer_Loop execution ----------
+2015-09-23 15:50:32,601 [Summarizer_loop]: ----- Excecuting Summarizer -----
+2015-09-23 15:50:32,601 [Summarizer]: ----- Start Summarizer.py -----
+2015-09-23 15:50:32,601 [Summarizer]: Populating file list in "\\10.10.1.150\das\Garnet"...
+2015-09-23 15:59:41,336 [Summarizer_loop]: ---------- Begin Summarizer_Loop execution ----------
+2015-09-23 15:59:41,336 [Summarizer_loop]: ----- Excecuting Summarizer -----
+2015-09-23 15:59:41,336 [Summarizer]: ----- Start Summarizer.py -----
+2015-09-23 15:59:41,336 [Summarizer]: Populating file list in \\10.10.1.150\das\Garnet...
+2015-09-23 15:59:42,532 [Summarizer]: Checking if archive is up to date...
+2015-09-23 15:59:42,532 [Check_Archives]: ----- Start Check_Archives ----
+2015-09-23 15:59:42,681 [Check_Archives]: List of missing files: []
+2015-09-23 15:59:42,681 [Summarizer]: 230 files to summarize.
+2015-09-23 15:59:42,681 [Summarizer]: List of .dat files to update: []
+2015-09-23 15:59:42,681 [Summarizer]: Predicted time to complete: 59.8 seconds.
+2015-09-23 15:59:42,681 [Summarizer]: Working...
+2015-09-23 15:59:42,681 [Summarizer]: Removed 'C:\\Users\\knotohamiprodjo\\Desktop\\py_dev\\Summary.xlsx'
+2015-09-23 15:59:42,681 [Summarizer]: Begin datalogger summary...
+2015-09-23 15:59:42,701 [Datalogger_archiver]: ----- Start Datalogger_Archiver -----
+2015-09-23 15:59:42,701 [Datalogger_archiver]: Populating file list in \\10.10.1.150\das\Garnet...
+2015-09-23 15:59:43,936 [Check_Archives]: ----- Start Check_Archives ----
+2015-09-23 15:59:44,016 [Check_Archives]: List of missing files: []
+2015-09-23 15:59:44,016 [Datalogger_archiver]: Opening .dat files...
+2015-09-23 15:59:44,016 [Datalogger_archiver]: Creating Dataframe
+2015-09-23 15:59:44,016 [Datalogger_archiver]: Writing to Excel
+2015-09-23 15:59:44,145 [Summarizer]: Removed 'C:\\Users\\knotohamiprodjo\\Desktop\\py_dev\\Datalogger_Archive.xlsx'
+2015-09-23 15:59:44,145 [Summarizer]: Copied 'C:\\Users\\knotohamiprodjo\\Desktop\\py_dev\\Summary.xlsx' to 'C:\\Users\\knotohamiprodjo\\Desktop\\py_dev\\Datalogger_Archive.xlsx'
+2015-09-23 15:59:44,145 [Summarizer]: Summary complete!
+2015-09-23 15:59:44,145 [Summarizer]: Total Time: 1.46399998665seconds for 230 dataloggers.
+2015-09-23 15:59:44,145 [Summarizer]: Total Time: 1.46399998665seconds for 230 dataloggers.
+2015-09-23 15:59:44,145 [Summarizer]: 0.00636521733325 seconds per file.
+2015-09-23 15:59:44,145 [Summarizer]: ----- IMAGE CREATION -----
+2015-09-23 15:59:44,145 [Summarizer]: Beginning image creations Grapherizer.py...
+2015-09-23 15:59:44,365 [Grapherizer]: Output Format: 'Disp'
+2015-09-23 15:59:44,365 [Grapherizer]: Animate YN: 'N'
+2015-09-23 15:59:44,365 [Grapherizer]: Overwrite YN: 'N'
+2015-09-23 15:59:44,365 [Grapherizer]: Found 113 primary logs and 117 secondary logs.
+2015-09-23 15:59:44,365 [Grapherizer]: Working...
+2015-09-23 15:59:44,365 [Grapherizer]: CREATING DIRECTORY C:\Users\knotohamiprodjo\Desktop\py_dev\Summary.xlsx\2015_09_11\Disp
+2015-09-23 15:59:44,365 [Summarizer]: ----- WIND SUMMARY -----
+2015-09-23 15:59:44,365 [Summarizer]: Beginning wind60min summary...
+2015-09-23 15:59:45,766 [Summarizer]: ----- VIDEO FILES -----
+2015-09-23 15:59:45,766 [Summarizer]: Grabbing Video Files....
+2015-09-23 15:59:45,875 [Summarizer_loop]: Waiting for 5.0 minutes before next execution.
+2015-09-23 15:59:45,885 [Summarizer_loop]: Start wait...
+2015-09-23 16:01:05,323 [Summarizer_loop]: ---------- Begin Summarizer_Loop execution ----------
+2015-09-23 16:01:05,323 [Summarizer_loop]: ----- Excecuting Summarizer -----
+2015-09-23 16:01:05,323 [Summarizer]: ----- Start Summarizer.py -----
+2015-09-23 16:01:05,323 [Summarizer]: Populating file list in \\10.10.1.150\das\Garnet...
+2015-09-23 16:01:06,598 [Summarizer]: Checking if archive is up to date...
+2015-09-23 16:01:06,598 [Check_Archives]: ----- Start Check_Archives ----
+2015-09-23 16:01:06,737 [Check_Archives]: List of missing files: []
+2015-09-23 16:01:06,737 [Summarizer]: 230 files to summarize.
+2015-09-23 16:01:06,737 [Summarizer]: List of .dat files to update: []
+2015-09-23 16:01:06,737 [Summarizer]: Predicted time to complete: 59.8 seconds.
+2015-09-23 16:01:06,737 [Summarizer]: Working...
+2015-09-23 16:01:06,737 [Summarizer]: Removed 'C:\\Users\\knotohamiprodjo\\Desktop\\py_dev\\Summary.xlsx'
+2015-09-23 16:01:06,737 [Summarizer]: Begin datalogger summary...
+2015-09-23 16:01:06,747 [Datalogger_archiver]: ----- Start Datalogger_Archiver -----
+2015-09-23 16:01:06,747 [Datalogger_archiver]: Populating file list in \\10.10.1.150\das\Garnet...
+2015-09-23 16:01:08,039 [Check_Archives]: ----- Start Check_Archives ----
+2015-09-23 16:01:08,119 [Check_Archives]: List of missing files: []
+2015-09-23 16:01:08,119 [Datalogger_archiver]: Opening .dat files...
+2015-09-23 16:01:08,119 [Datalogger_archiver]: Creating Dataframe
+2015-09-23 16:01:08,119 [Datalogger_archiver]: Writing to Excel
+2015-09-23 16:01:08,230 [Summarizer]: Removed 'C:\\Users\\knotohamiprodjo\\Desktop\\py_dev\\Datalogger_Archive.xlsx'
+2015-09-23 16:01:08,230 [Summarizer]: Copied 'C:\\Users\\knotohamiprodjo\\Desktop\\py_dev\\Summary.xlsx' to 'C:\\Users\\knotohamiprodjo\\Desktop\\py_dev\\Datalogger_Archive.xlsx'
+2015-09-23 16:01:08,230 [Summarizer]: Summary complete!
+2015-09-23 16:01:08,230 [Summarizer]: Total Time: 1.492000103seconds for 230 dataloggers.
+2015-09-23 16:01:08,230 [Summarizer]: Total Time: 1.492000103seconds for 230 dataloggers.
+2015-09-23 16:01:08,240 [Summarizer]: 0.00648695696955 seconds per file.
+2015-09-23 16:01:08,240 [Summarizer]: ----- IMAGE CREATION -----
+2015-09-23 16:01:08,240 [Summarizer]: Beginning image creations Grapherizer.py...
+2015-09-23 16:01:08,440 [Grapherizer]: Output Format: 'Disp'
+2015-09-23 16:01:08,440 [Grapherizer]: Animate YN: 'N'
+2015-09-23 16:01:08,440 [Grapherizer]: Overwrite YN: 'N'
+2015-09-23 16:01:08,440 [Grapherizer]: Found 113 primary logs and 117 secondary logs.
+2015-09-23 16:01:08,440 [Grapherizer]: Working...
+2015-09-23 16:01:08,440 [Grapherizer]: Not overwriting 'CR6_1696_AHRS_2015_09_11_2141'_Disp.jpg
+2015-09-23 16:01:08,440 [Grapherizer]: Not overwriting 'CR6_1696_AHRS_2015_09_13_1911'_Disp.jpg
+2015-09-23 16:01:08,440 [Grapherizer]: Not overwriting 'CR6_1696_AHRS_2015_09_13_2034'_Disp.jpg
+2015-09-23 16:01:08,440 [Grapherizer]: Not overwriting 'CR6_1696_AHRS_2015_09_13_2108'_Disp.jpg
+2015-09-23 16:01:08,440 [Grapherizer]: Not overwriting 'CR6_1696_AHRS_2015_09_13_2120'_Disp.jpg
+2015-09-23 16:01:08,440 [Grapherizer]: Not overwriting 'CR6_1696_AHRS_2015_09_13_2141'_Disp.jpg
+2015-09-23 16:01:08,450 [Grapherizer]: Not overwriting 'CR6_1696_AHRS_2015_09_13_2145'_Disp.jpg
+2015-09-23 16:01:08,450 [Grapherizer]: Not overwriting 'CR6_1696_AHRS_2015_09_13_2200'_Disp.jpg
+2015-09-23 16:01:08,450 [Grapherizer]: Not overwriting 'CR6_1696_AHRS_2015_09_13_2202'_Disp.jpg
+2015-09-23 16:01:08,450 [Grapherizer]: Not overwriting 'CR6_1696_AHRS_2015_09_13_2300'_Disp.jpg
+2015-09-23 16:01:08,450 [Grapherizer]: Not overwriting 'CR6_1696_AHRS_2015_09_13_2309'_Disp.jpg
+2015-09-23 16:01:08,450 [Grapherizer]: Not overwriting 'CR6_1696_AHRS_2015_09_14_0000'_Disp.jpg
+2015-09-23 16:01:08,460 [Grapherizer]: Not overwriting 'CR6_1696_AHRS_2015_09_14_0002'_Disp.jpg
+2015-09-23 16:01:08,460 [Grapherizer]: Not overwriting 'CR6_1696_AHRS_2015_09_14_0100'_Disp.jpg
+2015-09-23 16:01:08,460 [Grapherizer]: Not overwriting 'CR6_1696_AHRS_2015_09_14_0105'_Disp.jpg
+2015-09-23 16:01:08,460 [Grapherizer]: Not overwriting 'CR6_1696_AHRS_2015_09_14_0200'_Disp.jpg
+2015-09-23 16:01:08,470 [Grapherizer]: Not overwriting 'CR6_1696_AHRS_2015_09_14_0202'_Disp.jpg
+2015-09-23 16:01:08,470 [Grapherizer]: Not overwriting 'CR6_1696_AHRS_2015_09_14_0300'_Disp.jpg
+2015-09-23 16:01:08,470 [Grapherizer]: Not overwriting 'CR6_1696_AHRS_2015_09_14_0305'_Disp.jpg
+2015-09-23 16:01:08,470 [Grapherizer]: Not overwriting 'CR6_1696_AHRS_2015_09_14_0400'_Disp.jpg
+2015-09-23 16:01:08,480 [Grapherizer]: Not overwriting 'CR6_1696_AHRS_2015_09_14_0503'_Disp.jpg
+2015-09-23 16:01:08,480 [Grapherizer]: Not overwriting 'CR6_1696_AHRS_2015_09_14_0506'_Disp.jpg
+2015-09-23 16:01:08,480 [Grapherizer]: Not overwriting 'CR6_1696_AHRS_2015_09_14_0600'_Disp.jpg
+2015-09-23 16:01:08,480 [Grapherizer]: Not overwriting 'CR6_1696_AHRS_2015_09_14_0603'_Disp.jpg
+2015-09-23 16:01:08,480 [Grapherizer]: Not overwriting 'CR6_1696_AHRS_2015_09_14_1422'_Disp.jpg
+2015-09-23 16:01:08,490 [Grapherizer]: Not overwriting 'CR6_1696_AHRS_2015_09_14_1434'_Disp.jpg
+2015-09-23 16:01:08,490 [Grapherizer]: Not overwriting 'CR6_1696_AHRS_2015_09_14_1500'_Disp.jpg
+2015-09-23 16:01:08,490 [Grapherizer]: Not overwriting 'CR6_1696_AHRS_2015_09_14_1503'_Disp.jpg
+2015-09-23 16:01:08,490 [Grapherizer]: Not overwriting 'CR6_1696_AHRS_2015_09_14_1600'_Disp.jpg
+2015-09-23 16:01:08,500 [Grapherizer]: Not overwriting 'CR6_1696_AHRS_2015_09_14_1603'_Disp.jpg
+2015-09-23 16:01:08,500 [Grapherizer]: Not overwriting 'CR6_1696_AHRS_2015_09_14_1607'_Disp.jpg
+2015-09-23 16:01:08,500 [Grapherizer]: Not overwriting 'CR6_1696_AHRS_2015_09_14_1700'_Disp.jpg
+2015-09-23 16:01:08,500 [Grapherizer]: Not overwriting 'CR6_1696_AHRS_2015_09_14_1707'_Disp.jpg
+2015-09-23 16:01:08,509 [Grapherizer]: Not overwriting 'CR6_1696_AHRS_2015_09_14_1800'_Disp.jpg
+2015-09-23 16:01:08,509 [Grapherizer]: Not overwriting 'CR6_1696_AHRS_2015_09_14_1805'_Disp.jpg
+2015-09-23 16:01:08,509 [Grapherizer]: Not overwriting 'CR6_1696_AHRS_2015_09_14_1900'_Disp.jpg
+2015-09-23 16:01:08,509 [Grapherizer]: Not overwriting 'CR6_1696_AHRS_2015_09_14_1901'_Disp.jpg
+2015-09-23 16:01:08,509 [Grapherizer]: Not overwriting 'CR6_1696_AHRS_2015_09_14_2002'_Disp.jpg
+2015-09-23 16:01:08,519 [Grapherizer]: Not overwriting 'CR6_1696_AHRS_2015_09_14_2004'_Disp.jpg
+2015-09-23 16:01:08,519 [Grapherizer]: Not overwriting 'CR6_1696_AHRS_2015_09_14_2100'_Disp.jpg
+2015-09-23 16:01:08,519 [Grapherizer]: Not overwriting 'CR6_1696_AHRS_2015_09_14_2102'_Disp.jpg
+2015-09-23 16:01:08,529 [Grapherizer]: Not overwriting 'CR6_1696_AHRS_2015_09_14_2200'_Disp.jpg
+2015-09-23 16:01:08,529 [Grapherizer]: Not overwriting 'CR6_1696_AHRS_2015_09_14_2300'_Disp.jpg
+2015-09-23 16:01:08,529 [Grapherizer]: Not overwriting 'CR6_1696_AHRS_2015_09_14_2301'_Disp.jpg
+2015-09-23 16:01:08,529 [Grapherizer]: Not overwriting 'CR6_1696_AHRS_2015_09_15_0000'_Disp.jpg
+2015-09-23 16:01:08,529 [Grapherizer]: Not overwriting 'CR6_1696_AHRS_2015_09_15_0004'_Disp.jpg
+2015-09-23 16:01:08,539 [Grapherizer]: Not overwriting 'CR6_1696_AHRS_2015_09_15_0057'_Disp.jpg
+2015-09-23 16:01:08,539 [Grapherizer]: Not overwriting 'CR6_1696_AHRS_2015_09_15_0112'_Disp.jpg
+2015-09-23 16:01:08,539 [Grapherizer]: Not overwriting 'CR6_1696_AHRS_2015_09_15_0115'_Disp.jpg
+2015-09-23 16:01:08,539 [Grapherizer]: Not overwriting 'CR6_1696_AHRS_2015_09_15_0245'_Disp.jpg
+2015-09-23 16:01:08,539 [Grapherizer]: Not overwriting 'CR6_1696_AHRS_2015_09_15_0301'_Disp.jpg
+2015-09-23 16:01:08,539 [Grapherizer]: Not overwriting 'CR6_1696_AHRS_2015_09_15_0404'_Disp.jpg
+2015-09-23 16:01:08,539 [Grapherizer]: Not overwriting 'CR6_1696_AHRS_2015_09_15_0412'_Disp.jpg
+2015-09-23 16:01:08,539 [Grapherizer]: Not overwriting 'CR6_1696_AHRS_2015_09_15_0508'_Disp.jpg
+2015-09-23 16:01:08,549 [Grapherizer]: Not overwriting 'CR6_1696_AHRS_2015_09_15_0516'_Disp.jpg
+2015-09-23 16:01:08,549 [Grapherizer]: Not overwriting 'CR6_1696_AHRS_2015_09_15_2215'_Disp.jpg
+2015-09-23 16:01:08,549 [Grapherizer]: Not overwriting 'CR6_1696_AHRS_2015_09_15_2237'_Disp.jpg
+2015-09-23 16:01:08,549 [Grapherizer]: Not overwriting 'CR6_1696_AHRS_2015_09_15_2305'_Disp.jpg
+2015-09-23 16:01:08,549 [Grapherizer]: Not overwriting 'CR6_1696_AHRS_2015_09_15_2321'_Disp.jpg
+2015-09-23 16:01:08,551 [Grapherizer]: Not overwriting 'CR6_1696_AHRS_2015_09_16_0029'_Disp.jpg
+2015-09-23 16:01:08,551 [Grapherizer]: Not overwriting 'CR6_1696_AHRS_2015_09_16_0255'_Disp.jpg
+2015-09-23 16:01:08,551 [Grapherizer]: Not overwriting 'CR6_1696_AHRS_2015_09_16_0438'_Disp.jpg
+2015-09-23 16:01:08,551 [Grapherizer]: Not overwriting 'CR6_1696_AHRS_2015_09_16_0443'_Disp.jpg
+2015-09-23 16:01:08,551 [Grapherizer]: Not overwriting 'CR6_1696_AHRS_2015_09_16_0453'_Disp.jpg
+2015-09-23 16:01:08,552 [Grapherizer]: Not overwriting 'CR6_1696_AHRS_2015_09_16_0509'_Disp.jpg
+2015-09-23 16:01:08,553 [Grapherizer]: Not overwriting 'CR6_1696_AHRS_2015_09_16_0510'_Disp.jpg
+2015-09-23 16:01:08,555 [Grapherizer]: Not overwriting 'CR6_1696_AHRS_2015_09_16_0608'_Disp.jpg
+2015-09-23 16:01:08,558 [Grapherizer]: Not overwriting 'CR6_1696_AHRS_2015_09_16_0912'_Disp.jpg
+2015-09-23 16:01:08,559 [Grapherizer]: Not overwriting 'CR6_1696_AHRS_2015_09_16_1137'_Disp.jpg
+2015-09-23 16:01:08,561 [Grapherizer]: Not overwriting 'CR6_1696_AHRS_2015_09_16_1145'_Disp.jpg
+2015-09-23 16:01:08,562 [Grapherizer]: Not overwriting 'CR6_1696_AHRS_2015_09_16_1159'_Disp.jpg
+2015-09-23 16:01:08,565 [Grapherizer]: Not overwriting 'CR6_1696_AHRS_2015_09_16_1201'_Disp.jpg
+2015-09-23 16:01:08,566 [Grapherizer]: Not overwriting 'CR6_1696_AHRS_2015_09_16_1521'_Disp.jpg
+2015-09-23 16:01:08,569 [Grapherizer]: Not overwriting 'CR6_1696_AHRS_2015_09_16_1641'_Disp.jpg
+2015-09-23 16:01:08,571 [Grapherizer]: Not overwriting 'CR6_1696_AHRS_2015_09_16_1707'_Disp.jpg
+2015-09-23 16:01:08,572 [Grapherizer]: Not overwriting 'CR6_1696_AHRS_2015_09_16_1815'_Disp.jpg
+2015-09-23 16:01:08,573 [Grapherizer]: Not overwriting 'CR6_1696_AHRS_2015_09_16_1817'_Disp.jpg
+2015-09-23 16:01:08,594 [Grapherizer]: Not overwriting 'CR6_1696_AHRS_2015_09_16_1906'_Disp.jpg
+2015-09-23 16:01:08,594 [Grapherizer]: Not overwriting 'CR6_1696_AHRS_2015_09_16_2053'_Disp.jpg
+2015-09-23 16:01:08,594 [Grapherizer]: Not overwriting 'CR6_1696_AHRS_2015_09_16_2121'_Disp.jpg
+2015-09-23 16:01:08,594 [Grapherizer]: Not overwriting 'CR6_1696_AHRS_2015_09_16_2217'_Disp.jpg
+2015-09-23 16:01:08,594 [Grapherizer]: Not overwriting 'CR6_1696_AHRS_2015_09_16_2219'_Disp.jpg
+2015-09-23 16:01:08,594 [Grapherizer]: Not overwriting 'CR6_1696_AHRS_2015_09_16_2301'_Disp.jpg
+2015-09-23 16:01:08,604 [Grapherizer]: Not overwriting 'CR6_1696_AHRS_2015_09_16_2310'_Disp.jpg
+2015-09-23 16:01:08,604 [Grapherizer]: Not overwriting 'CR6_1696_AHRS_2015_09_17_0000'_Disp.jpg
+2015-09-23 16:01:08,604 [Grapherizer]: Not overwriting 'CR6_1696_AHRS_2015_09_17_0005'_Disp.jpg
+2015-09-23 16:01:08,604 [Grapherizer]: Not overwriting 'CR6_1696_AHRS_2015_09_17_0100'_Disp.jpg
+2015-09-23 16:01:08,604 [Grapherizer]: Not overwriting 'CR6_1696_AHRS_2015_09_17_0102'_Disp.jpg
+2015-09-23 16:01:08,614 [Grapherizer]: Not overwriting 'CR6_1696_AHRS_2015_09_17_0200'_Disp.jpg
+2015-09-23 16:01:08,614 [Grapherizer]: Not overwriting 'CR6_1696_AHRS_2015_09_17_0201'_Disp.jpg
+2015-09-23 16:01:08,614 [Grapherizer]: Not overwriting 'CR6_1696_AHRS_2015_09_17_0300'_Disp.jpg
+2015-09-23 16:01:08,614 [Grapherizer]: Not overwriting 'CR6_1696_AHRS_2015_09_17_0302'_Disp.jpg
+2015-09-23 16:01:08,614 [Grapherizer]: Not overwriting 'CR6_1696_AHRS_2015_09_17_0412'_Disp.jpg
+2015-09-23 16:01:08,624 [Grapherizer]: Not overwriting 'CR6_1696_AHRS_2015_09_17_0415'_Disp.jpg
+2015-09-23 16:01:08,624 [Grapherizer]: Not overwriting 'CR6_1696_AHRS_2015_09_17_0500'_Disp.jpg
+2015-09-23 16:01:08,624 [Grapherizer]: Not overwriting 'CR6_1696_AHRS_2015_09_17_0517'_Disp.jpg
+2015-09-23 16:01:08,624 [Grapherizer]: Not overwriting 'CR6_1696_AHRS_2015_09_17_0525'_Disp.jpg
+2015-09-23 16:01:08,624 [Grapherizer]: Not overwriting 'CR6_1696_AHRS_2015_09_17_0602'_Disp.jpg
+2015-09-23 16:01:08,624 [Grapherizer]: Not overwriting 'CR6_1696_AHRS_2015_09_17_0612'_Disp.jpg
+2015-09-23 16:01:08,634 [Grapherizer]: Not overwriting 'CR6_1696_AHRS_2015_09_17_0710'_Disp.jpg
+2015-09-23 16:01:08,634 [Grapherizer]: Not overwriting 'CR6_1696_AHRS_2015_09_17_0748'_Disp.jpg
+2015-09-23 16:01:08,634 [Grapherizer]: Not overwriting 'CR6_1696_AHRS_2015_09_17_0814'_Disp.jpg
+2015-09-23 16:01:08,634 [Grapherizer]: Not overwriting 'CR6_1696_AHRS_2015_09_17_0821'_Disp.jpg
+2015-09-23 16:01:08,634 [Grapherizer]: Not overwriting 'CR6_1696_AHRS_2015_09_17_0901'_Disp.jpg
+2015-09-23 16:01:08,634 [Grapherizer]: Not overwriting 'CR6_1696_AHRS_2015_09_18_1500'_Disp.jpg
+2015-09-23 16:01:08,634 [Grapherizer]: Not overwriting 'CR6_1696_AHRS_2015_09_21_1608'_Disp.jpg
+2015-09-23 16:01:08,644 [Grapherizer]: Not overwriting 'CR6_1696_AHRS_2015_09_21_1705'_Disp.jpg
+2015-09-23 16:01:08,644 [Grapherizer]: Not overwriting 'CR6_1696_AHRS_2015_09_21_1734'_Disp.jpg
+2015-09-23 16:01:08,644 [Grapherizer]: Not overwriting 'CR6_1696_AHRS_2015_09_21_1737'_Disp.jpg
+2015-09-23 16:01:08,644 [Grapherizer]: Not overwriting 'CR6_1696_AHRS_2015_09_21_1802'_Disp.jpg
+2015-09-23 16:01:08,644 [Grapherizer]: Not overwriting 'CR6_1696_AHRS_2015_09_21_1805'_Disp.jpg
+2015-09-23 16:01:08,644 [Grapherizer]: Not overwriting 'CR6_1696_AHRS_2015_09_22_2028'_Disp.jpg
+2015-09-23 16:01:08,644 [Grapherizer]: Not overwriting 'CR6_1696_AHRS_2015_09_22_2122'_Disp.jpg
+2015-09-23 16:01:08,644 [Grapherizer]: Not overwriting 'CR6_1697_AHRS_2015_09_14_1443'_Disp.jpg
+2015-09-23 16:01:08,644 [Grapherizer]: Not overwriting 'CR6_1697_AHRS_2015_09_15_0128'_Disp.jpg
+2015-09-23 16:01:08,644 [Grapherizer]: Not overwriting 'CR6_1697_AHRS_2015_09_15_0416'_Disp.jpg
+2015-09-23 16:01:08,654 [Grapherizer]: Not overwriting 'CR6_1697_AHRS_2015_09_15_0442'_Disp.jpg
+2015-09-23 16:01:08,654 [Grapherizer]: Not overwriting 'CR6_1697_AHRS_2015_09_16_0445'_Disp.jpg
+2015-09-23 16:01:08,654 [Grapherizer]: Not overwriting 'CR6_1697_AHRS_2015_09_16_0617'_Disp.jpg
+2015-09-23 16:01:08,654 [Grapherizer]: Not overwriting 'CR6_1697_AHRS_2015_09_16_1845'_Disp.jpg
+2015-09-23 16:01:08,654 [Grapherizer]: Not overwriting 'CR6_1697_AHRS_2015_09_16_2233'_Disp.jpg
+2015-09-23 16:01:08,664 [Grapherizer]: Not overwriting 'CR6_1697_AHRS_2015_09_17_0210'_Disp.jpg
+2015-09-23 16:01:08,664 [Grapherizer]: Not overwriting 'CR6_1697_AHRS_2015_09_17_0259'_Disp.jpg
+2015-09-23 16:01:08,664 [Grapherizer]: Not overwriting 'CR6_1697_AHRS_2015_09_17_0309'_Disp.jpg
+2015-09-23 16:01:08,664 [Grapherizer]: Not overwriting 'CR6_1697_AHRS_2015_09_17_0835'_Disp.jpg
+2015-09-23 16:01:08,664 [Grapherizer]: Not overwriting 'CR6_1697_AHRS_2015_09_17_1341'_Disp.jpg
+2015-09-23 16:01:08,664 [Grapherizer]: Not overwriting 'CR6_1697_AHRS_2015_09_21_1751'_Disp.jpg
+2015-09-23 16:01:08,664 [Grapherizer]: DONE! 0 images created, and 0 animations.
+2015-09-23 16:01:08,664 [Summarizer]: ----- WIND SUMMARY -----
+2015-09-23 16:01:08,664 [Summarizer]: Beginning wind60min summary...
+2015-09-23 16:01:10,201 [Summarizer]: ----- VIDEO FILES -----
+2015-09-23 16:01:10,201 [Summarizer]: Grabbing Video Files....
+2015-09-23 16:01:10,302 [Summarizer_loop]: Waiting for 5.0 minutes before next execution.
+2015-09-23 16:01:10,302 [Summarizer_loop]: Start wait...

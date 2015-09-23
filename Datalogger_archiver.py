@@ -5,11 +5,16 @@ import logging
 from os.path import isfile, join
 import pandas
 import Check_Archives
+import ConfigParser
+
+config = ConfigParser.ConfigParser()
+config.read('config.ini')
+module_name = 'Datalogger_archiver'
 
 def main(output_filename):
-	logger = logging.getLogger("Summarizer_Loop")
+	logger = logging.getLogger(config.get('Logger','logger_name'))
 	logger.info("----- Start Datalogger_Archiver -----")
-	mypath = "\\\\10.10.1.150\das\Garnet"
+	mypath = config.get('Paths','datastorage_path')
 	logger.info("Populating file list in " + mypath + "...")
 	onlyfiles = [ f for f in os.listdir(mypath) if isfile(join(mypath,f)) ]
 
@@ -25,7 +30,7 @@ def main(output_filename):
 
 	
 	try:
-		arc_path = 'C:\Users\knotohamiprodjo\Desktop\py_dev\Datalogger_Archive.xlsx'
+		arc_path = config.get('Paths','archive_path')
 		arc_excel = pandas.read_excel(arc_path,sheetname = 'Sheet1')
 		missing_files = Check_Archives.main(only1696+only1697 , return_list = True)
 		filenames = arc_excel['Filename'].values.tolist()

@@ -7,9 +7,14 @@ from os import listdir
 import Check_Archives
 import pandas
 import logging
+import ConfigParser
+
+config = ConfigParser.ConfigParser()
+config.read('config.ini')
+module_name = 'Event_Video_Getter'
 
 def main(event_start,event_end,pre_record_duration = 0, post_record_duration = 0):
-	logger = logging.getLogger("Summarizer_Loop")
+	logger = logging.getLogger(config.get('Logger','logger_name'))
 	logger.info("----- Start Event_Video_Getter -----")
 	dt = datetime.datetime
 	event_start = strptime(event_start,"%m%d%y%H%M%S")
@@ -168,7 +173,7 @@ def main(event_start,event_end,pre_record_duration = 0, post_record_duration = 0
 	# Write files
 	export_number = 1
 	export_filename = strftime("%m%d%y%H%M%S",event_start)
-	export_path = "C:\Users\knotohamiprodjo\Desktop\py_dev\Video_Files" + "\\" + export_filename
+	export_path = config.get(module_name,'export_path') + "\\" + export_filename
 	if not os.path.exists(export_path) and len(video_filenames)>0:
 		logger.info('CREATING DIRECTORY ' + export_path)
 		os.makedirs(export_path)

@@ -4,11 +4,16 @@ import logging
 import matplotlib.dates as md
 import time
 import datetime
+import ConfigParser
+
+config = ConfigParser.ConfigParser()
+config.read('config.ini')
+module_name = 'getMax'
 
 
 def main(filename):
-    logger = logging.getLogger("Summarizer_Loop")
-    mypath = "\\\\10.10.1.150\das\Garnet"
+    logger = logging.getLogger(config.get('Logger','logger_name'))
+    mypath = config.get('Paths','datastorage_path')
     csv = pandas.read_csv(mypath + '\\' +  filename, header = 1, skiprows = [2,3,4,5]) #creates data frame
 
     def magnitude(a,b,c):
