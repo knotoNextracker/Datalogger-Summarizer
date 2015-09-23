@@ -1,0 +1,1 @@
+C:\Users\knotohamiprodjo\AppData\Local\Continuum\Anaconda\python.exe C:\Users\knotohamiprodjo\desktop\py_dev\Summarizer_Loop.py %*
