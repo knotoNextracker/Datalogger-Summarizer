@@ -12,6 +12,8 @@ import matplotlib.pyplot as plt
 import matplotlib.dates as md
 import datetime as dt
 from myAnimate import myAnimate
+import logging
+
 #Get list of .dat files in directory
 def get_inputs():
 	output_format = str(raw_input('Which Data [Acc, Disp, Ang]: '))
@@ -26,33 +28,38 @@ def write_inputs():
 	overwriteYN = 'N'
 	return [output_format,animateYN,overwriteYN]
 
-def main(args=write_inputs()):
+def main(datalogger_files,args=write_inputs()):
+	logger = logging.getLogger("Summarizer_Loop")
 	output_format = args[0]
 	animateYN = args[1]
 	overwriteYN = args[2]
+	logger.debug("Output Format: %r" % output_format)
+	logger.debug("Animate YN: %r" % animateYN)
+	logger.debug("Overwrite YN: %r" % overwriteYN)
 	images_made = 0
 	animations_made = 0
-	# datapath = "C:\Users\knotohamiprodjo\Desktop\py_data\NEW"
+
 	datapath = "\\\\10.10.1.150\das\Garnet"
 	exportpath = "C:\Users\knotohamiprodjo\Desktop\py_dev"
-	print "Populating file lists..."
-	dirs = [d for d in os.listdir(exportpath) if os.path.isdir(os.path.join(exportpath,d))]
-	onlyfiles = [ f for f in listdir(datapath) if isfile(join(datapath,f)) ]
-	onlydat = [ g for g in onlyfiles if "dat" in g ]
+	# logger.info("Populating file lists...")
+	# dirs = [d for d in os.listdir(exportpath) if os.path.isdir(os.path.join(exportpath,d))]
+	# onlyfiles = [ f for f in listdir(datapath) if isfile(join(datapath,f)) ]
+	# onlydat = [ g for g in onlyfiles if "dat" in g ]
 
-	#Get list of only accelerometer data files from onlydat
-	onlybatt = [ h for h in onlydat if "AHRS" in h]
+	# #Get list of only accelerometer data files from onlydat
+	# onlybatt = [ h for h in onlydat if "AHRS" in h]
 
-	#Remove RAW files
-	noraw = [ j for j in onlybatt if not "raw" in j]
+	# #Remove RAW files
+	# noraw = [ j for j in onlybatt if not "raw" in j]
 
 	#Split files of 1696 and 1697
+	noraw = datalogger_files
 	only1696 = [i for i in noraw if "1696" in i]
 	only1697 = [i for i in noraw if "1697" in i]
-	print 'Found ' + str(len(only1696)) + ' primary logs and ' + str(len(only1697)) + ' secondary logs.'
+	logger.info('Found ' + str(len(only1696)) + ' primary logs and ' + str(len(only1697)) + ' secondary logs.')
 
 	#Get desired outputs and animation request
-	print 'Working...'
+	logger.info('Working...')
 
 	#Configure output format for future graph labels
 	if output_format == 'Acc':
@@ -90,21 +97,21 @@ def main(args=write_inputs()):
 		filename_second = filename[0:7] + '7' + filename[8:] #generate secondary datalogger filename
 
 		if not os.path.exists(savepath):
-			print 'CREATING DIRECTORY ' + savepath
+			logger.info('CREATING DIRECTORY ' + savepath)
 			os.makedirs(savepath)
 		else:
 			pass
 		existfiles = [ a for a in listdir(savepath) if isfile(join(savepath,a)) ]
 		if filename[:-4] + '_' + output_format + '.jpg' in existfiles and overwriteYN == 'N':
-
 			try:
 				only1697.pop(only1697.index(filename_second))
 			except:
 				pass
+			logger.debug("Not overwriting %r" % filename[:-4] + '_' + output_format + '.jpg')
 			pass
 		else:
 			csv = pandas.read_csv(datapath + '\\' +  filename,header = 1,skiprows = [2,3,4,5])
-			
+			logger.debug("Graphing %r" % datapath + '\\' +  filename)
 			if len(csv['TIMESTAMP'])<5:
 				continue
 			
@@ -294,7 +301,7 @@ def main(args=write_inputs()):
 			if animateYN == 'Y':
 				myAnimate(i)
 				animations_made += 2
-				print 'ANIMATION DONE'
+				logger.info('ANIMATION DONE')
 			else:
 				pass
 			images_made += 1
@@ -305,16 +312,17 @@ def main(args=write_inputs()):
 		filedate = i[14:24]
 		savepath = exportpath + '\\' + filedate + '\\' + output_format 
 		if not os.path.exists(savepath):
-			print 'CREATING DIRECTORY ' + savepath
+			logger.info('CREATING DIRECTORY ' + savepath)
 			os.makedirs(savepath)
 		else:
 			pass
 		existfiles = [a for a in listdir(savepath) if isfile(join(savepath,a))]
 		if filename[:-4] + '_' + output_format + '.jpg' in existfiles and overwriteYN == 'N':
+			logger.debug("Not overwriting %r" % filename[:-4] + '_' + output_format + '.jpg')
 			pass
 		else:
 			csv = pandas.read_csv(datapath + '\\' +  filename,header = 1,skiprows = [2,3,4,5])
-			
+			logger.debug("Graphing %r" % datapath + '\\' +  filename)
 			if len(csv['TIMESTAMP'])<5:
 				continue
 			
@@ -408,12 +416,12 @@ def main(args=write_inputs()):
 			if animateYN == 'Y':
 				myAnimate(i)
 				animations_made += 2
-				print 'ANIMATION DONE'
+				logger.info('ANIMATION DONE')
 			else:
 				pass
 			images_made += 1
 
-	print 'DONE! ' + str(images_made) + ' images created, and ' + str(animations_made) + ' animations.'
+	logger.info('DONE! ' + str(images_made) + ' images created, and ' + str(animations_made) + ' animations.')
 
 if __name__ == "__main__":
 	main(get_inputs())

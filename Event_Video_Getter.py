@@ -6,22 +6,17 @@ from os.path import isfile, join
 from os import listdir
 import Check_Archives
 import pandas
+import logging
 
-def main(event_start,event_end,pre_record_duration = 0, post_record_duration = 0,HTTP_Handler = None):
-
-	def http_log(txt,HTTP_Handler):
-		try:
-			HTTP_Handler.wfile.write('<p>'+txt+'</p>')
-		except:
-			pass
-		print txt
-
+def main(event_start,event_end,pre_record_duration = 0, post_record_duration = 0):
+	logger = logging.getLogger("Summarizer_Loop")
+	logger.info("----- Start Event_Video_Getter -----")
 	dt = datetime.datetime
 	event_start = strptime(event_start,"%m%d%y%H%M%S")
 	event_end = strptime(event_end, "%m%d%y%H%M%S")
 
 	# if event_end in [ None , '' ,'None'] :
-	# 	http_log('No event_end time, waiting for datalogger update to determine event end',HTTP_Handler)
+	# 	logger.info(No event_end time, waiting for datalogger update to determine event end')
 	# 	for counter in range(0,6):
 	# 		mypath = "\\\\10.10.1.150\das\Garnet"
 	# 		# mypath = "C:\Users\knotohamiprodjo\Desktop\py_data"
@@ -37,10 +32,10 @@ def main(event_start,event_end,pre_record_duration = 0, post_record_duration = 0
 	# 		only1696 = [ i for i in noraw if "1696" in i]
 	# 		only1697 = [i for i in noraw if "1697" in i]
 	# 		if Check_Archives.main(only1696 + only1697):
-	# 			http_log('Waiting 5 min for event to end...',HTTP_Handler)
+	# 			logger.info(Waiting 5 min for event to end...')
 	# 			sleep(60*5)
 	# 		elif counter == 5:
-	# 			http_log('30 min elapsed, no datalogger update, shutting down video getter...',HTTP_Handler)
+	# 			logger.info(30 min elapsed, no datalogger update, shutting down video getter...')
 	# 			return
 	# 		else:
 	# 			break
@@ -58,7 +53,7 @@ def main(event_start,event_end,pre_record_duration = 0, post_record_duration = 0
 	# 	excel[(excel['Start Time']>event_start)]
 
 	login = ('admin','S01aR.P0w3R')
-	http_log( 'Connecting to webpage...',HTTP_Handler)
+	logger.info('Connecting to webpage...')
 	webpage = "http://172.16.203.4"
 	r = requests.get(webpage + "/server/events/",auth = login)
 
@@ -124,7 +119,7 @@ def main(event_start,event_end,pre_record_duration = 0, post_record_duration = 0
 	dirs = [href[idx] for idx,val in enumerate(isdir) if val == 1]
 
 	# Open first level and get the base 3digit folders
-	http_log( 'Navigating directories...',HTTP_Handler)
+	logger.info('Navigating directories...')
 	r1 = requests.get(webpage + base_dir + '/' + dirs[0], auth = login)
 	response1 = r1.content
 	base_dir1, href1, last_changed1, isdir1 = linkscrubber(response1)
@@ -136,7 +131,7 @@ def main(event_start,event_end,pre_record_duration = 0, post_record_duration = 0
 	video_last_changed = []
 	video_directories = []
 	keep_going = True
-	http_log( 'Looking for files between %r and %r' % (strftime("%m/%d/%y %H:%M:%S",event_start),strftime("%m/%d/%y %H:%M:%S",event_end)),HTTP_Handler)
+	logger.info('Looking for files between %r and %r' % (strftime("%m/%d/%y %H:%M:%S",event_start),strftime("%m/%d/%y %H:%M:%S",event_end)))
 	for path in reversed(dirs1):
 		r2 = requests.get(webpage + base_dir1 + '/' + path, auth = login)
 		response2 = r2.content
@@ -168,31 +163,31 @@ def main(event_start,event_end,pre_record_duration = 0, post_record_duration = 0
 		if keep_going == False:
 			break
 
-	http_log( "Downloading %r files..." % len(video_filenames),HTTP_Handler)
+	logger.info("Downloading %r files..." % len(video_filenames))
 
 	# Write files
 	export_number = 1
 	export_filename = strftime("%m%d%y%H%M%S",event_start)
 	export_path = "C:\Users\knotohamiprodjo\Desktop\py_dev\Video_Files" + "\\" + export_filename
 	if not os.path.exists(export_path) and len(video_filenames)>0:
-		http_log( 'CREATING DIRECTORY ' + export_path,HTTP_Handler)
+		logger.info('CREATING DIRECTORY ' + export_path)
 		os.makedirs(export_path)
 		for directory in reversed(video_directories):
 
 			video_file = webpage + directory
-			http_log( "Downloading %r as %r ..." % (video_file,export_path + '/' + export_filename + '_' + str(export_number) + '.mxg'),HTTP_Handler)
+			logger.info("Downloading %r as %r ..." % (video_file,export_path + '/' + export_filename + '_' + str(export_number) + '.mxg'))
 
 			with open(export_path + "\\" + export_filename + '_' + str(export_number) + '.mxg','wb') as handle:
 				response = requests.get(video_file,auth = login, stream=True)
 
 				if not response.ok:
-					http_log( 'ERROR IN DOWNLOAD',HTTP_Handler)
+					logger.info('ERROR IN DOWNLOAD')
 
 				for block in response.iter_content(1024):
 					handle.write(block)
 				export_number += 1
-				http_log( "Download Complete",HTTP_Handler)
+				logger.info("Download Complete")
 	elif len(video_filenames)==0:
-		http_log("No files to download!",HTTP_Handler)
+		logger.info("No files to download!")
 	elif not(os.path.exists(export_path)):
-		http_log("Directory already exists!",HTTP_Handler)
+		logger.info("Directory already exists!")

@@ -7,8 +7,8 @@ import Check_Archives
 import shutil
 
 def main():
-    logging.getLogger(__name__)
-    logging.info("Begin execution " + str(time.strftime("%a, %d %b %Y %H:%M:%S")))
+    logger = logging.getLogger("Summarizer_Loop")
+    logger.info("----- Start Summarizer.py -----")
 
     def listToCSV(array_input):
         output = str(array_input[0])
@@ -19,7 +19,7 @@ def main():
     #Get list of .dat files in directory
     mypath = "\\\\10.10.1.150\das\Garnet"
     # mypath = "C:\Users\knotohamiprodjo\Desktop\py_data"
-    print "Populating file list in " + mypath + "..."
+    logger.info( "Populating file list in " + mypath + "...")
     onlyfiles = [ f for f in listdir(mypath) if isfile(join(mypath,f)) ]
     onlydat = [ g for g in onlyfiles if "dat" in g ]
 
@@ -30,54 +30,57 @@ def main():
     noraw = [ j for j in onlybatt if not "raw" in j]
     only1696 = [ i for i in noraw if "1696" in i]
     only1697 = [i for i in noraw if "1697" in i]
-    print "Checking if archive is up to date..."
+    logger.info( "Checking if archive is up to date...")
     if not(Check_Archives.main(only1696 + only1697)):
-        videolist = Check_Archives.main(only1696+only1697,return_list = True)
-        numdataloggers = len(noraw)
-        logging.info(str(numdataloggers) + " files to summarize.")
-        print str(len(only1696)) + " primary datalogger files."
-        print str(len(only1697)) + " secondary datalogger files."
-        print "Predicted time to complete: " + str(0.26 * numdataloggers) + " seconds."
-        print "Working..."
+        update_list = Check_Archives.main(only1696+only1697,return_list = True)
+        numdataloggers = len(update_list) if len(update_list)>0 else len(only1696+only1697)
+        logger.info(str(numdataloggers) + " files to summarize.")
+        logger.debug("List of .dat files to update: %r" % update_list)
+        logger.info("Predicted time to complete: " + str(0.26 * numdataloggers) + " seconds.")
+        logger.info("Working...")
         #Create output and initialize headers
         outputFilename = "C:\Users\knotohamiprodjo\Desktop\py_dev\Summary.xlsx"
         archiveFilename = "C:\Users\knotohamiprodjo\Desktop\py_dev\Datalogger_Archive.xlsx"
         try:
             os.remove(outputFilename)
+            logger.debug("Removed %r" % outputFilename)
         except:
+            logger.debug("Could not remove %r" % outputFilename)
             pass    
 
         #Go through all 1696 data and write to fout
 
         start_time = time.time()
-        print "Begin datalogger summary..."
+        logger.info( "Begin datalogger summary...")
 
         import Datalogger_archiver
         Datalogger_archiver.main(outputFilename)
 
         try:
             os.remove(archiveFilename)
+            logger.debug("Removed %r" % archiveFilename)
         except:
+            logger.debug("Could not remove %r" % archiveFilename)
             pass
         shutil.copyfile(outputFilename, archiveFilename)
+        logger.debug("Copied %r to %r" % (outputFilename,archiveFilename))
 
-        print "Summary complete!"
+        logger.info( "Summary complete!")
         elapsed_time = time.time() - start_time
-        print "Total Time: " + str(elapsed_time) + "seconds for " + str(numdataloggers) + " dataloggers."
-        logging.info("Total Time: " + str(elapsed_time) + "seconds for " + str(numdataloggers) + " dataloggers.")
-        print str(elapsed_time / numdataloggers) + " seconds per file."
-        print "----- IMAGE CREATION -----"
-        print "Beginning image creations Grapherizer.py..."
+        logger.info( "Total Time: " + str(elapsed_time) + "seconds for " + str(numdataloggers) + " dataloggers.")
+        logger.info("Total Time: " + str(elapsed_time) + "seconds for " + str(numdataloggers) + " dataloggers.")
+        logger.info( str(elapsed_time / numdataloggers) + " seconds per file.")
+        logger.info( "----- IMAGE CREATION -----")
+        logger.info( "Beginning image creations Grapherizer.py...")
         import Grapherizer
-        Grapherizer.main()
-        print "----- WIND SUMMARY -----"
-        print "Beginning wind60min summary..."
+        Grapherizer.main(update_list if len(update_list)>0 else only1696 + only1697)
+        logger.info( "----- WIND SUMMARY -----")
+        logger.info( "Beginning wind60min summary...")
         import Wind60
         Wind60.main()
-        print "----- VIDEO FILES -----"
-        print "Grabbing Video Files...."
+        logger.info( "----- VIDEO FILES -----")
+        logger.info( "Grabbing Video Files....")
         import Video_Sorter
-        Video_Sorter.main(videolist)
+        Video_Sorter.main(update_list)
     else:
-        logging.info("Summary up to date, no updates required.")
-        print "Summary up to date, no updates required."
+        logger.info("Summary up to date, no updates required.")

@@ -5,11 +5,9 @@ import matplotlib.dates as md
 import time
 import datetime
 
-logging.getLogger(__name__)
-logging.info("Begin execution " + str(time.strftime("%a, %d %b %Y %H:%M:%S")))
 
 def main(filename):
-
+    logger = logging.getLogger("Summarizer_Loop")
     mypath = "\\\\10.10.1.150\das\Garnet"
     csv = pandas.read_csv(mypath + '\\' +  filename, header = 1, skiprows = [2,3,4,5]) #creates data frame
 
@@ -28,8 +26,7 @@ def main(filename):
         YAcc_30m = csv['YAcc_30m']
         ZAcc_30m = csv['ZAcc_30m']
         if len(XAcc_30m)<5:
-            print filename + " is too short! Skipping..."
-            logging.warning(filename + " is too short! Skipping...")
+            logger.debug(filename + " is too short! Skipping...")
             return [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
         else:
             pass
@@ -73,8 +70,7 @@ def main(filename):
         YAcc_20m = csv['YAcc_20m']
         ZAcc_20m = csv['ZAcc_20m']
         if len(XAcc_20m)<5:
-            print filename + " is too short! Skipping..."
-            logging.warning(filename + " is too short! Skipping...")
+            logger.debug(filename + " is too short! Skipping...")
             return [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
         else:
             pass

@@ -1,0 +1,10 @@
+2015-09-23 14:26:50,812 [Summarizer_loop]: ---------- Begin Summarizer_Loop execution ----------
+2015-09-23 14:26:50,812 [Summarizer_loop]: ----- Excecuting Summarizer -----
+2015-09-23 14:26:50,812 [Summarizer]: ----- Start Summarizer.py -----
+2015-09-23 14:26:50,812 [Summarizer]: Populating file list in \\10.10.1.150\das\Garnet...
+2015-09-23 14:26:52,243 [Summarizer]: Checking if archive is up to date...
+2015-09-23 14:26:52,243 [Check_Archives]: ----- Start Check_Archives ----
+2015-09-23 14:26:52,364 [Check_Archives]: No files to update!
+2015-09-23 14:26:52,374 [Summarizer]: Summary up to date, no updates required.
+2015-09-23 14:26:52,374 [Summarizer_loop]: Waiting for 30 minutes before next execution.
+2015-09-23 14:26:52,374 [Summarizer_loop]: Start wait...

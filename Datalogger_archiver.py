@@ -5,11 +5,12 @@ import logging
 from os.path import isfile, join
 import pandas
 import Check_Archives
+
 def main(output_filename):
-	logging.getLogger(__name__)
-	logging.info("Begin execution " + str(time.strftime("%a, %d %b %Y %H: %M:%S")))
+	logger = logging.getLogger("Summarizer_Loop")
+	logger.info("----- Start Datalogger_Archiver -----")
 	mypath = "\\\\10.10.1.150\das\Garnet"
-	logging.info("Populating file list in " + mypath + "...")
+	logger.info("Populating file list in " + mypath + "...")
 	onlyfiles = [ f for f in os.listdir(mypath) if isfile(join(mypath,f)) ]
 
 	onlydat = [ g for g in onlyfiles if "dat" in g ]
@@ -39,7 +40,7 @@ def main(output_filename):
 		timeperdatapoints = arc_excel['Time per Datapoint'].values.tolist()
 		first_event_end = arc_excel['First Event End'].values.tolist()
 	except:
-		print "No archive. Creating new file."
+		logger.info("No archive. Creating new file.")
 		missing_files = only1696+only1697
 		filenames = []
 		datetime_start = []
@@ -52,8 +53,9 @@ def main(output_filename):
 		event_durations = []
 		timeperdatapoints = []
 		first_event_end = []
-	print "Opening .dat files..."
+	logger.info("Opening .dat files...")
 	for i in missing_files:
+		logger.debug("Opening %r" % i)
 		max_data = getMax.main(i)
 		filenames.append(i)
 		datetime_start.append(max_data[0])
@@ -79,7 +81,7 @@ def main(output_filename):
 		'Time per Datapoint':timeperdatapoints,
 		'First Event End': first_event_end
 	}
-	print "Creating Dataframe"
+	logger.info("Creating Dataframe")
 	df = pandas.DataFrame(data)
 	df = df[[
 		'Filename',
@@ -95,7 +97,7 @@ def main(output_filename):
 		'First Event End'
 		]]
 
-	print "Writing to Excel"
+	logger.info("Writing to Excel")
 	writer = pandas.ExcelWriter(output_filename)
 
 	df.to_excel(writer,'Sheet1',index = False)
